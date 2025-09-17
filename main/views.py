@@ -15,7 +15,7 @@ from django.urls import reverse
 @login_required(login_url='/login')
 def show_main(request):
 
-    filter_type = request.GET.get("filter", "all")  # default 'all'
+    filter_type = request.GET.get("filter", "")  # default 'all'
 
     if filter_type == "all":
         news_list = News.objects.all()
